@@ -192,8 +192,8 @@ struct ChartAdd: View {
                         .background(RoundedRectangle(cornerRadius: 15).fill(Color("primary")))
                         .padding()
                 })
-                .opacity(viewModel.streamer.isEmpty || viewModel.game.isEmpty ? 0.5 : 1)
-                .disabled(viewModel.streamer.isEmpty || viewModel.game.isEmpty ? true : false)
+                .opacity(viewModel.streamer.isEmpty ? 0.5 : 1)
+                .disabled(viewModel.streamer.isEmpty ? true : false)
             }
         }
         .onAppear {

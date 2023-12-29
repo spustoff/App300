@@ -133,6 +133,10 @@ struct PaymentView: View {
             
             viewModel.fetchPayments()
         }
+        .sheet(isPresented: $viewModel.isAdd, content: {
+            
+            PaymentAdd(viewModel: viewModel)
+        })
     }
 }
 
