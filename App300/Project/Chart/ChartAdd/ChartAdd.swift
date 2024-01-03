@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit_design
 
 struct ChartAdd: View {
     
@@ -145,31 +146,7 @@ struct ChartAdd: View {
                             )
                         }
                         
-                        HStack {
-                            
-                            Text("Game")
-                                .foregroundColor(.white)
-                                .font(.system(size: 15, weight: .medium))
-                            
-                            ZStack(alignment: .leading, content: {
-                                
-                                Text("Enter")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 15, weight: .regular))
-                                    .opacity(viewModel.game.isEmpty ? 1 : 0)
-                                
-                                TextField("", text: $viewModel.game)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 15, weight: .regular))
-                            })
-                        }
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 15).fill(.gray.opacity(0.1)))
-                        .overlay (
-                        
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(.white.opacity(0.3))
-                        )
+                        TextFieldCustom(text: $viewModel.game, placeholderText: "Enter", isStrokeLight: true, isOverlay: true, isHeaderText: true, isDeleteButton: true, isOverlayRectangle: true, headerText: "Game", overlayStrokeLightColor: Color("primary"), overlayStrokeColor: .gray.opacity(0.8))
                     }
                     .padding([.horizontal, .bottom])
                 }
@@ -192,8 +169,8 @@ struct ChartAdd: View {
                         .background(RoundedRectangle(cornerRadius: 15).fill(Color("primary")))
                         .padding()
                 })
-                .opacity(viewModel.streamer.isEmpty ? 0.5 : 1)
-                .disabled(viewModel.streamer.isEmpty ? true : false)
+                .opacity(viewModel.game.isEmpty || viewModel.streamer.isEmpty ? 0.5 : 1)
+                .disabled(viewModel.game.isEmpty || viewModel.streamer.isEmpty ? true : false)
             }
         }
         .onAppear {

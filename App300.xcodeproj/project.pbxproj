@@ -36,6 +36,7 @@
 		F904E2AC2B38369800B1A071 /* PaymentAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F904E2AB2B38369800B1A071 /* PaymentAdd.swift */; };
 		F904E2AE2B3837A500B1A071 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F904E2AD2B3837A500B1A071 /* SettingsView.swift */; };
 		F904E2B02B38382100B1A071 /* IdeasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F904E2AF2B38382000B1A071 /* IdeasView.swift */; };
+		F9315E852B45595E00F7AC6C /* UIKit_package in Frameworks */ = {isa = PBXBuildFile; productRef = F9315E842B45595E00F7AC6C /* UIKit_package */; };
 		F96A69E82B3C50F200030424 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F96A69E72B3C50F200030424 /* ApphudSDK */; };
 		F96A69EB2B3C510A00030424 /* Amplitude in Frameworks */ = {isa = PBXBuildFile; productRef = F96A69EA2B3C510A00030424 /* Amplitude */; };
 		F96A69F02B3C512300030424 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = F96A69EF2B3C512300030424 /* OneSignalFramework */; };
@@ -91,6 +92,7 @@
 				F96A69F02B3C512300030424 /* OneSignalFramework in Frameworks */,
 				F96A6A272B3C514300030424 /* FirebaseRemoteConfigSwift in Frameworks */,
 				F96A69EB2B3C510A00030424 /* Amplitude in Frameworks */,
+				F9315E852B45595E00F7AC6C /* UIKit_package in Frameworks */,
 				F96A69E82B3C50F200030424 /* ApphudSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +298,7 @@
 				F96A69EA2B3C510A00030424 /* Amplitude */,
 				F96A69EF2B3C512300030424 /* OneSignalFramework */,
 				F96A6A262B3C514300030424 /* FirebaseRemoteConfigSwift */,
+				F9315E842B45595E00F7AC6C /* UIKit_package */,
 			);
 			productName = App300;
 			productReference = F904E25C2B3825A800B1A071 /* App300.app */;
@@ -330,6 +333,7 @@
 				F96A69E92B3C510A00030424 /* XCRemoteSwiftPackageReference "Amplitude-iOS" */,
 				F96A69EC2B3C512300030424 /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 				F96A69F52B3C514300030424 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F9315E832B45595E00F7AC6C /* XCRemoteSwiftPackageReference "UIKit_package" */,
 			);
 			productRefGroup = F904E25D2B3825A800B1A071 /* Products */;
 			projectDirPath = "";
@@ -520,7 +524,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App300/App300.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"App300/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -536,7 +540,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = xz.App300;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -555,7 +559,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App300/App300.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"App300/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -571,7 +575,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = xz.App300;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -607,6 +611,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F9315E832B45595E00F7AC6C /* XCRemoteSwiftPackageReference "UIKit_package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spustoff/UIKit_package.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F96A69E62B3C50F200030424 /* XCRemoteSwiftPackageReference "ApphudSDK" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apphud/ApphudSDK";
@@ -642,6 +654,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F9315E842B45595E00F7AC6C /* UIKit_package */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9315E832B45595E00F7AC6C /* XCRemoteSwiftPackageReference "UIKit_package" */;
+			productName = UIKit_package;
+		};
 		F96A69E72B3C50F200030424 /* ApphudSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F96A69E62B3C50F200030424 /* XCRemoteSwiftPackageReference "ApphudSDK" */;

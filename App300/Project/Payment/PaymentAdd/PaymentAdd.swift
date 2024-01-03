@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit_design
 
 struct PaymentAdd: View {
     
@@ -121,58 +122,9 @@ struct PaymentAdd: View {
                             )
                         }
                         
-                        HStack {
-                            
-                            Text("Earned")
-                                .foregroundColor(.white)
-                                .font(.system(size: 15, weight: .medium))
-                            
-                            ZStack(alignment: .leading, content: {
-                                
-                                Text("$")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 15, weight: .regular))
-                                    .opacity(viewModel.earned.isEmpty ? 1 : 0)
-                                
-                                TextField("", text: $viewModel.earned)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 15, weight: .regular))
-                                    .keyboardType(.decimalPad)
-                            })
-                        }
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 15).fill(.gray.opacity(0.1)))
-                        .overlay (
+                        TextFieldCustom(text: $viewModel.earned, placeholderText: "$", isStrokeLight: true, isOverlay: true, isHeaderText: true, isDeleteButton: true, isOverlayRectangle: true, isDecimalPad: true, headerText: "Earned", overlayStrokeLightColor: Color("primary"), overlayStrokeColor: .gray.opacity(0.8))
                         
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(.white.opacity(0.3))
-                        )
-                        
-                        HStack {
-                            
-                            Text("Payment Type")
-                                .foregroundColor(.white)
-                                .font(.system(size: 15, weight: .medium))
-                            
-                            ZStack(alignment: .leading, content: {
-                                
-                                Text("Enter")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 15, weight: .regular))
-                                    .opacity(viewModel.payment_type.isEmpty ? 1 : 0)
-                                
-                                TextField("", text: $viewModel.payment_type)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 15, weight: .regular))
-                            })
-                        }
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 15).fill(.gray.opacity(0.1)))
-                        .overlay (
-                        
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(.white.opacity(0.3))
-                        )
+                        TextFieldCustom(text: $viewModel.payment_type, placeholderText: "Enter", isStrokeLight: true, isOverlay: true, isHeaderText: true, isDeleteButton: true, isOverlayRectangle: true, headerText: "Payment Type", overlayStrokeLightColor: Color("primary"), overlayStrokeColor: .gray.opacity(0.8))
                     }
                     .padding()
                 }

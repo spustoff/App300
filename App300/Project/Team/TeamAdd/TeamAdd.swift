@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit_design
 
 struct TeamAdd: View {
     
@@ -58,84 +59,11 @@ struct TeamAdd: View {
                     
                     LazyVStack(spacing: 25) {
                         
-                        HStack {
-                            
-                            Text("Nickname")
-                                .foregroundColor(.white)
-                                .font(.system(size: 15, weight: .medium))
-                            
-                            ZStack(alignment: .leading, content: {
-                                
-                                Text("Enter")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 15, weight: .regular))
-                                    .opacity(viewModel.nickname.isEmpty ? 1 : 0)
-                                
-                                TextField("", text: $viewModel.nickname)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 15, weight: .regular))
-                            })
-                        }
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 15).fill(.gray.opacity(0.1)))
-                        .overlay (
+                        TextFieldCustom(text: $viewModel.nickname, placeholderText: "Enter", isStrokeLight: true, isOverlay: true, isHeaderText: true, isDeleteButton: true, isOverlayRectangle: true, headerText: "Nickname", overlayStrokeLightColor: Color("primary"), overlayStrokeColor: .gray.opacity(0.8))
                         
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(.white.opacity(0.3))
-                        )
+                        TextFieldCustom(text: $viewModel.name, placeholderText: "Enter", isStrokeLight: true, isOverlay: true, isHeaderText: true, isDeleteButton: true, isOverlayRectangle: true, headerText: "Name", overlayStrokeLightColor: Color("primary"), overlayStrokeColor: .gray.opacity(0.8))
                         
-                        HStack {
-                            
-                            Text("Name")
-                                .foregroundColor(.white)
-                                .font(.system(size: 15, weight: .medium))
-                            
-                            ZStack(alignment: .leading, content: {
-                                
-                                Text("Enter")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 15, weight: .regular))
-                                    .opacity(viewModel.name.isEmpty ? 1 : 0)
-                                
-                                TextField("", text: $viewModel.name)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 15, weight: .regular))
-                            })
-                        }
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 15).fill(.gray.opacity(0.1)))
-                        .overlay (
-                        
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(.white.opacity(0.3))
-                        )
-                        
-                        HStack {
-                            
-                            Text("Subscribers")
-                                .foregroundColor(.white)
-                                .font(.system(size: 15, weight: .medium))
-                            
-                            ZStack(alignment: .leading, content: {
-                                
-                                Text("Enter")
-                                    .foregroundColor(.gray)
-                                    .font(.system(size: 15, weight: .regular))
-                                    .opacity(viewModel.subscribers.isEmpty ? 1 : 0)
-                                
-                                TextField("", text: $viewModel.subscribers)
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 15, weight: .regular))
-                                    .keyboardType(.decimalPad)
-                            })
-                        }
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 15).fill(.gray.opacity(0.1)))
-                        .overlay (
-                        
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(.white.opacity(0.3))
-                        )
+                        TextFieldCustom(text: $viewModel.subscribers, placeholderText: "Enter", isStrokeLight: true, isOverlay: true, isHeaderText: true, isDeleteButton: true, isOverlayRectangle: true, isDecimalPad: true, headerText: "Subscribers", overlayStrokeLightColor: Color("primary"), overlayStrokeColor: .gray.opacity(0.8))
                     }
                     .padding()
                 }
